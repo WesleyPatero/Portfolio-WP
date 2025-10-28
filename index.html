@@ -480,7 +480,7 @@
             background-color: var(--bg-dark-secondary);
             border-radius: 12px;
             overflow: hidden;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease; /* [AJUSTE 7] Transição mais suave (era 0.3s) */
             border: 1px solid var(--bg-dark-tertiary);
             display: flex;
             flex-direction: column;
@@ -488,9 +488,9 @@
         }
 
         .project-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px); /* [AJUSTE 7] Efeito de hover mais suave (era -8px) */
             border-color: var(--accent-primary);
-            box-shadow: 0 0 25px var(--glow-color);
+            box-shadow: 0 0 20px var(--glow-color); /* [AJUSTE 7] Sombra mais suave (era 25px) */
         }
 
         .project-content {
@@ -694,9 +694,8 @@
             
             <nav>
                 <ul class="nav-menu-desktop">
-                    <li><a href="#about" class="active">Sobre</a></li>
+                    <li><a href="#projects">Projetos</a></li> <li><a href="#about" class="active">Sobre</a></li>
                     <li><a href="#skills">Habilidades</a></li>
-                    <li><a href="#projects">Projetos</a></li>
                     <li><a href="#contact" class="btn">Contato</a></li> 
                 </ul>
             </nav>
@@ -711,9 +710,8 @@
 
     <nav>
         <ul class="nav-menu-mobile">
-            <li><a href="#about">Sobre</a></li>
+            <li><a href="#projects">Projetos</a></li> <li><a href="#about">Sobre</a></li>
             <li><a href="#skills">Habilidades</a></li>
-            <li><a href="#projects">Projetos</a></li>
             <li><a href="#contact">Contato</a></li>
         </ul>
     </nav>
@@ -723,87 +721,10 @@
             <div class="hero-content container">
                 <h1>Transformando Dados em Decisões.</h1>
                 <p class="subtitle">Wesley Patero Trancoso | Coordenador de BI & Especialista em Dados</p>
-                <p>Com mais de 7 anos de experiência, meu foco é traduzir dados complexos em insights acionáveis, otimizar processos e automatizar rotinas para impulsionar a eficiência operacional e estratégica.</p>
+                <p>Com mais de 7 anos de experiência, meu foco é unir <strong>gestão de processos</strong> e <strong>data analytics</strong> para traduzir dados complexos em insights acionáveis, otimizar rotinas e impulsionar a eficiência operacional.</p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn">Meus Projetos</a>
-                    <a href="#contact" class="btn btn-secondary">Vamos Conversar</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="about" class="section fade-in-section">
-            <div class="container">
-                <h2>Minha Trajetória</h2>
-                <p class="section-description">
-                    Uma jornada que une a otimização de processos da engenharia com o poder preditivo do machine learning.
-                </p>
-                <div class="about-grid">
-                    <div class="about-text">
-                        <h3>Engenharia, Dados e Aprendizado</h3>
-                        <p>Minha carreira é fundamentada em uma base sólida de <strong>Engenharia de Produção</strong>, que me proporcionou um olhar crítico para melhoria contínua e eficiência. Ao longo dos últimos 7 anos, canalizei essa paixão para o universo dos dados.</p>
-                        <p>Hoje, como <strong>Coordenador de BI</strong>, lidero a centralização e estruturação de operações de dados, construindo a ponte vital entre a engenharia de dados e a tomada de decisão estratégica. Minha busca contínua por conhecimento me levou a especializações em <strong>Machine Learning</strong> e <strong>Gamificação</strong>, sempre com o objetivo de criar soluções mais inteligentes, eficientes e engajadoras.</p>
-                    </div>
-                    <div class="about-education">
-                        <h3>Formação Acadêmica</h3>
-                        <ul class="education-list">
-                            <li class="education-item">
-                                <strong>Gamificação e Jogos de Aprendizagem</strong>
-                                <span>Faculdade Multivix (2024-Atualmente)</span>
-                            </li>
-                            <li class="education-item">
-                                <strong>Machine Learning EIA</strong>
-                                <span>Faculdade Multivix (2023-2024)</span>
-                            </li>
-                            <li class="education-item">
-                                <strong>Engenharia de Produção</strong>
-                                <span>IFES - Instituto Federal do Espirito Santo (2014-2021)</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section fade-in-section">
-            <div class="container">
-                <h2>Habilidades e Ferramentas</h2>
-                <p class="section-description">
-                    Meu arsenal de tecnologias para cobrir todo o ciclo de vida do dado, da engenharia à visualização.
-                </p>
-                <div class="skills-container">
-                    
-                    <div class="skill-group">
-                        <h4>BI & Visualização</h4>
-                        <div class="skills-pills">
-                            <span class="skill-pill">Power BI</span>
-                            <span class="skill-pill">Metabase</span>
-                            <span class="skill-pill">Data Studio</span>
-                            <span class="skill-pill">Storytelling com Dados</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group">
-                        <h4>Engenharia & Automação</h4>
-                        <div class="skills-pills">
-                            <span class="skill-pill">SQL</span>
-                            <span class="skill-pill">Python</span>
-                            <span class="skill-pill">n8n</span>
-                            <span class="skill-pill">Dagster</span>
-                            <span class="skill-pill">VBA</span>
-                            <span class="skill-pill">ETL</span>
-                        </div>
-                    </div>
-                    
-                    <div class="skill-group">
-                        <h4>Data Science & Processos</h4>
-                        <div class="skills-pills">
-                            <span class="skill-pill">Inteligência Artificial (IA)</span>
-                            <span class="skill-pill">Machine Learning</span>
-                            <span class="skill-pill">BPMN</span>
-                            <span class="skill-pill">Otimização de Processos</span>
-                        </div>
-                    </div>
-
+                    <a href="#contact" class="btn">Vamos Conversar</a>
+                    <a href="#projects" class="btn btn-secondary">Meus Projetos</a>
                 </div>
             </div>
         </section>
@@ -920,6 +841,91 @@
                 </div>
             </div>
         </section>
+
+        <section id="about" class="section fade-in-section">
+            <div class="container">
+                <h2>Minha Trajetória</h2>
+                <p class="section-description">
+                    Uma jornada que une a otimização de processos da engenharia com o poder preditivo do machine learning.
+                </p>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Engenharia, Dados e Aprendizado</h3>
+                        <p>Minha carreira é fundamentada em uma base sólida de <strong>Engenharia de Produção</strong>, que me proporcionou um olhar crítico para <strong>gestão, melhoria contínua e eficiência</strong>. Ao longo dos últimos 7 anos, canalizei essa paixão para o universo dos dados.</p>
+                        <p>Hoje, como <strong>Coordenador de BI</strong>, lidero a centralização e estruturação de operações de dados, construindo a ponte vital entre a engenharia de dados e a tomada de decisão estratégica. Minha busca contínua por conhecimento me levou a especializações em <strong>Machine Learning</strong> e <strong>Gamificação</strong>, sempre com o objetivo de criar soluções mais inteligentes, eficientes e engajadoras.</p>
+                        <p>Atuei em múltiplos segmentos, aplicando soluções de dados e processos em setores como <strong>Educação (IES)</strong>, <strong>Varejo (autônomo)</strong> e <strong>Publicidade (Mídia)</strong>, adaptando a estratégia analítica à necessidade de cada negócio.</p>
+                    </div>
+                    <div class="about-education">
+                        <h3>Formação Acadêmica</h3>
+                        <ul class="education-list">
+                            <li class="education-item">
+                                <strong>Engenharia de Produção</strong>
+                                <span>IFES - Instituto Federal do Espirito Santo (2014-2021)</span>
+                            </li>
+                            <li class="education-item">
+                                <strong>Especialização em Machine Learning EIA</strong>
+                                <span>Faculdade Multivix (2023-2024)</span>
+                            </li>
+                            <li class="education-item">
+                                <strong>Especialização em Gamificação e Jogos de Aprendizagem</strong>
+                                <span>Faculdade Multivix (2024-Atualmente)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section fade-in-section">
+            <div class="container">
+                <h2>Habilidades e Ferramentas</h2>
+                <p class="section-description">
+                    Meu arsenal de tecnologias para cobrir todo o ciclo de vida do dado, da engenharia à visualização.
+                </p>
+                <div class="skills-container">
+                    
+                    <div class="skill-group">
+                        <h4>BI & Visualização</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">Power BI</span>
+                            <span class="skill-pill">Metabase</span>
+                            <span class="skill-pill">Data Studio</span>
+                            <span class="skill-pill">Storytelling com Dados</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group">
+                        <h4>Engenharia & Automação</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">n8n</span>
+                            <span class="skill-pill">Dagster</span>
+                            <span class="skill-pill">VBA</span>
+                            <span class="skill-pill">ETL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group">
+                        <h4>Data Science & IA</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">Inteligência Artificial (IA)</span>
+                            <span class="skill-pill">Machine Learning</span>
+                        </div>
+                    </div>
+
+                    <div class="skill-group">
+                        <h4>Gestão & Processos</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">Gestão de Projetos</span>
+                            <span class="skill-pill">BPMN</span>
+                            <span class="skill-pill">Otimização de Processos</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer id="contact" class="footer">
@@ -934,9 +940,8 @@
                 <div class="footer-links">
                     <h4>Navegação</h4>
                     <ul>
-                        <li><a href="#about">Sobre Mim</a></li>
+                        <li><a href="#projects">Projetos</a></li> <li><a href="#about">Sobre Mim</a></li>
                         <li><a href="#skills">Habilidades</a></li>
-                        <li><a href="#projects">Projetos</a></li>
                     </ul>
                 </div>
                 
