@@ -1,0 +1,1155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Wesley Patero Trancoso - Portfólio de BI, Dados e ML</title>
+    <meta name="author" content="Wesley Patero Trancoso">
+    <meta name="description" content="Portfólio de Wesley Patero Trancoso, Coordenador de BI com +7 anos de experiência em transformar dados em insights, otimizar processos e aplicar Machine Learning.">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        /* * ==================================
+         * DESIGN SYSTEM (UI/UX) - REFINAMENTO DE CONTRASTE
+         * Tema: "Premium Dark" (Contraste Elevado)
+         * ==================================
+        */
+
+        :root {
+            /* Paleta de Cores Refinada */
+            --bg-dark-primary: #0F172A;      /* Fundo principal */
+            --bg-dark-secondary: #1E293B;   /* Fundo dos cards */
+            --bg-dark-tertiary: rgba(255, 255, 255, 0.15); /* Bordas mais claras */
+            
+            --text-primary: #FFFFFF;        /* Branco puro (Contraste máximo) */
+            --text-secondary: #94A3B8;      /* Cinza-azulado (Apoio) */
+            
+            --accent-primary: #60A5FA;      /* Azul vibrante (CTAs e acentos) */
+            --accent-primary-darker: #3B82F6; /* Tom para gradientes */
+            
+            --accent-secondary: #10B981;    /* Verde-esmeralda (Tags) */
+            
+            --glow-color: rgba(96, 165, 250, 0.5); /* Efeito Glow */
+            
+            --font-main: 'Poppins', sans-serif;
+        }
+
+        /* --- Reset Global e Padrões --- */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-dark-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* --- Hierarquia de Texto --- */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 0.75em;
+        }
+
+        h1 { font-size: clamp(2.5rem, 5vw, 4rem); }
+        h2 { font-size: clamp(2rem, 4vw, 2.75rem); color: var(--text-primary); text-align: center; margin-bottom: 60px; }
+        
+        h3 { 
+            font-size: 1.75rem; 
+            color: var(--accent-primary); 
+            margin-bottom: 30px; 
+            border-bottom: 1px solid var(--bg-dark-tertiary); 
+            padding-bottom: 15px; 
+        }
+        
+        h4 { font-size: 1.25rem; color: var(--text-primary); }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 1em;
+            max-width: 65ch;
+        }
+        
+        .section-description {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            text-align: center;
+            max-width: 800px;
+            margin: -40px auto 60px auto;
+        }
+
+        a {
+            color: var(--accent-primary);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--text-primary);
+            text-decoration: underline;
+        }
+
+        /* --- Classes Utilitárias --- */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .section {
+            padding: 100px 0;
+        }
+
+        /* Animação de Fade-in (UX) */
+        .js-fade-in {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .js-fade-in.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* --- Botão Principal (UI/UX) --- */
+        .btn {
+            display: inline-block;
+            background-color: var(--accent-primary);
+            color: var(--text-primary);
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-family: var(--font-main);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid var(--accent-primary);
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+            text-decoration: none;
+            box-shadow: 0 0 20px var(--glow-color), 0 0 30px var(--glow-color);
+            filter: brightness(1.1);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--accent-primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--accent-primary);
+            color: var(--text-primary);
+        }
+
+        /* * ==================================
+         * HEADER E NAVEGAÇÃO (UI/UX + RESPONSIVO)
+         * ==================================
+        */
+
+        .header {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            padding: 20px 0;
+            background-color: rgba(15, 23, 42, 0.85); 
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--bg-dark-tertiary);
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+        }
+
+        /* --- Navegação Desktop --- */
+        .nav-menu-desktop {
+            list-style: none;
+            display: flex;
+            align-items: center; 
+            gap: 35px;
+        }
+
+        .nav-menu-desktop a {
+            font-weight: 500;
+            color: #E5E7EB; 
+            font-size: 1rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-menu-desktop a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            display: block;
+            margin-top: 5px;
+            right: 0;
+            background: var(--accent-primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-menu-desktop a:hover, .nav-menu-desktop a.active {
+            color: var(--text-primary);
+            text-decoration: none;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+        }
+
+        .nav-menu-desktop a:hover::after {
+            width: 100%;
+            left: 0;
+        }
+        
+        /* Botão "Contato" com gradiente e glow */
+        .nav-menu-desktop a.btn {
+            background: linear-gradient(90deg, var(--accent-primary), var(--accent-primary-darker));
+            border: none;
+            color: var(--text-primary);
+            box-shadow: 0 0 15px var(--glow-color);
+            padding: 12px 28px; 
+        }
+        
+        .nav-menu-desktop a.btn:hover {
+            filter: brightness(1.2);
+            box-shadow: 0 0 25px var(--glow-color), 0 0 35px var(--glow-color);
+            transform: translateY(-3px);
+            text-shadow: none; 
+        }
+        
+        .nav-menu-desktop a.btn::after {
+            display: none; 
+        }
+
+        /* --- Menu Hamburger (Responsivo) --- */
+        .hamburger-menu {
+            display: none; 
+            flex-direction: column;
+            justify-content: space-around;
+            width: 28px;
+            height: 28px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 1002;
+        }
+
+        .hamburger-menu span {
+            width: 100%;
+            height: 3px;
+            background-color: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .hamburger-menu.is-active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        .hamburger-menu.is-active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.is-active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+
+        /* --- Menu Mobile (Responsivo) --- */
+        .nav-menu-mobile {
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 70%;
+            max-width: 300px;
+            height: 100vh;
+            background-color: var(--bg-dark-secondary);
+            z-index: 1001;
+            transform: translateX(100%);
+            transition: transform 0.3s ease-in-out;
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            list-style: none;
+            gap: 40px;
+        }
+        
+        .nav-menu-mobile.is-active {
+            transform: translateX(0);
+        }
+        
+        .nav-menu-mobile a {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        /* * ==================================
+         * ESTILOS DAS SEÇÕES
+         * ==================================
+        */
+        
+        /* --- Seção: Hero --- */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .hero::before { 
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(96, 165, 250, 0.1), transparent 70%);
+            opacity: 0.5;
+        }
+
+        .hero-content {
+            z-index: 1;
+        }
+
+        .hero h1 {
+            color: var(--text-primary);
+            margin-bottom: 0.25em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.5rem;
+            color: var(--accent-primary);
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap; 
+        }
+
+        /* --- Seção: Sobre Mim (Formação) --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: flex-start;
+        }
+        
+        .education-list {
+            list-style: none;
+        }
+        
+        .education-item {
+            position: relative;
+            padding: 20px;
+            padding-left: 40px;
+            border-left: 3px solid var(--accent-primary);
+            margin-bottom: 20px;
+            background: linear-gradient(to right, rgba(96, 165, 250, 0.05), transparent);
+            transition: background-color 0.3s ease;
+        }
+        
+        .education-item:hover {
+            background-color: rgba(96, 165, 250, 0.05);
+        }
+        
+        .education-item::before {
+            content: '🎓';
+            position: absolute;
+            left: -15px;
+            top: 15px;
+            font-size: 1.5rem;
+            background: var(--bg-dark-primary);
+            padding: 0 5px;
+        }
+
+        .education-item strong {
+            font-size: 1.2rem;
+            color: var(--text-primary);
+            display: block;
+        }
+        
+        .education-item span {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        /* --- Seção: Habilidades (Organizada) --- */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .skill-group {
+            background-color: var(--bg-dark-secondary);
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid var(--bg-dark-tertiary);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-group:hover {
+            border-color: var(--accent-primary);
+        }
+        
+        .skill-group h4 {
+            color: var(--accent-primary);
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--bg-dark-tertiary);
+            padding-bottom: 10px;
+        }
+        
+        .skills-pills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .skill-pill {
+            background-color: var(--bg-dark-primary);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            border: 1px solid var(--bg-dark-tertiary);
+            transition: all 0.3s ease;
+        }
+
+        .skill-pill:hover {
+            color: var(--accent-primary);
+            border-color: var(--accent-primary);
+        }
+
+        /* --- Seção: Projetos (Organizada) --- */
+        .projects-section-group {
+            display: flex;
+            flex-direction: column;
+            gap: 60px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: var(--bg-dark-secondary);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--bg-dark-tertiary);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent-primary);
+            box-shadow: 0 0 25px var(--glow-color);
+        }
+
+        .project-content {
+            padding: 30px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-context {
+            font-size: 0.9rem;
+            color: var(--accent-secondary);
+            font-weight: 600;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .project-content h4 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+        }
+        
+        .project-content p {
+            flex-grow: 1; 
+        }
+
+        .project-tags {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .project-tags span {
+            background-color: rgba(96, 165, 250, 0.1); 
+            color: var(--accent-primary);
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 6px 12px;
+            border-radius: 20px;
+        }
+
+        /* Estilo do Gráfico */
+        .project-graph {
+            padding: 20px;
+            background-color: rgba(15, 23, 42, 0.5); 
+            border-top: 1px solid var(--bg-dark-tertiary);
+            box-shadow: inset 0 4px 10px rgba(0,0,0,0.2); 
+        }
+
+        .project-graph canvas {
+            max-width: 100%;
+            height: 250px;
+        }
+
+        /* * ==================================
+         * FOOTER (COMBINADO COM CONTATO)
+         * ==================================
+        */
+        .footer {
+            background-color: var(--bg-dark-secondary);
+            color: var(--text-secondary);
+            padding: 80px 0 40px 0;
+            margin-top: 60px;
+            border-top: 1px solid var(--bg-dark-tertiary);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .footer-about h4 {
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+        }
+        
+        .footer-links h4, .footer-social h4 {
+            font-size: 1.1rem;
+            color: var(--text-primary);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+        }
+        .footer-links a:hover {
+            color: var(--accent-primary);
+            text-decoration: none;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .social-icons a {
+            color: var(--text-secondary);
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-primary);
+            transform: translateY(-3px);
+            text-decoration: none;
+        }
+        
+        .social-icons svg {
+            width: 28px;
+            height: 28px;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid var(--bg-dark-tertiary);
+            padding-top: 40px;
+            font-size: 0.9rem;
+        }
+        
+        .footer-bottom a {
+            font-weight: 500;
+        }
+
+        /* * ==================================
+         * MEDIA QUERIES (RESPONSIVIDADE)
+         * ==================================
+        */
+        @media (max-width: 900px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+            .footer-content {
+                grid-template-columns: 1fr 1fr;
+            }
+            .footer-about {
+                grid-column: 1 / -1; 
+            }
+        }
+        
+        @media (max-width: 768px) {
+            /* Ativa o Menu Hamburger */
+            .nav-menu-desktop {
+                display: none;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+
+            .hero {
+                min-height: 90vh;
+                text-align: left;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .projects-grid, .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .social-icons {
+                justify-content: center;
+            }
+            
+            .footer-links ul {
+                align-items: center;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="#hero" class="logo">Wesley Patero Trancoso</a>
+            
+            <nav>
+                <ul class="nav-menu-desktop">
+                    <li><a href="#about" class="active">Sobre</a></li>
+                    <li><a href="#skills">Habilidades</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#contact" class="btn">Contato</a></li> 
+                </ul>
+            </nav>
+            
+            <button class="hamburger-menu" aria-label="Abrir menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <nav>
+        <ul class="nav-menu-mobile">
+            <li><a href="#about">Sobre</a></li>
+            <li><a href="#skills">Habilidades</a></li>
+            <li><a href="#projects">Projetos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section class="hero" id="hero">
+            <div class="hero-content container">
+                <h1>Transformando Dados em Decisões.</h1>
+                <p class="subtitle">Wesley Patero Trancoso | Coordenador de BI & Especialista em Dados</p>
+                <p>Com mais de 7 anos de experiência, meu foco é traduzir dados complexos em insights acionáveis, otimizar processos e automatizar rotinas para impulsionar a eficiência operacional e estratégica.</p>
+                <div class="hero-buttons">
+                    <a href="#projects" class="btn">Meus Projetos</a>
+                    <a href="#contact" class="btn btn-secondary">Vamos Conversar</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section fade-in-section">
+            <div class="container">
+                <h2>Minha Trajetória</h2>
+                <p class="section-description">
+                    Uma jornada que une a otimização de processos da engenharia com o poder preditivo do machine learning.
+                </p>
+                <div class="about-grid">
+                    <div class="about-text">
+                        <h3>Engenharia, Dados e Aprendizado</h3>
+                        <p>Minha carreira é fundamentada em uma base sólida de <strong>Engenharia de Produção</strong>, que me proporcionou um olhar crítico para melhoria contínua e eficiência. Ao longo dos últimos 7 anos, canalizei essa paixão para o universo dos dados.</p>
+                        <p>Hoje, como <strong>Coordenador de BI</strong>, lidero a centralização e estruturação de operações de dados, construindo a ponte vital entre a engenharia de dados e a tomada de decisão estratégica. Minha busca contínua por conhecimento me levou a especializações em <strong>Machine Learning</strong> e <strong>Gamificação</strong>, sempre com o objetivo de criar soluções mais inteligentes, eficientes e engajadoras.</p>
+                    </div>
+                    <div class="about-education">
+                        <h3>Formação Acadêmica</h3>
+                        <ul class="education-list">
+                            <li class="education-item">
+                                <strong>Gamificação e Jogos de Aprendizagem</strong>
+                                <span>Faculdade Multivix (2024-Atualmente)</span>
+                            </li>
+                            <li class="education-item">
+                                <strong>Machine Learning EIA</strong>
+                                <span>Faculdade Multivix (2023-2024)</span>
+                            </li>
+                            <li class="education-item">
+                                <strong>Engenharia de Produção</strong>
+                                <span>IFES - Instituto Federal do Espirito Santo (2014-2021)</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section fade-in-section">
+            <div class="container">
+                <h2>Habilidades e Ferramentas</h2>
+                <p class="section-description">
+                    Meu arsenal de tecnologias para cobrir todo o ciclo de vida do dado, da engenharia à visualização.
+                </p>
+                <div class="skills-container">
+                    
+                    <div class="skill-group">
+                        <h4>BI & Visualização</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">Power BI</span>
+                            <span class="skill-pill">Metabase</span>
+                            <span class="skill-pill">Data Studio</span>
+                            <span class="skill-pill">Storytelling com Dados</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group">
+                        <h4>Engenharia & Automação</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">SQL</span>
+                            <span class="skill-pill">Python</span>
+                            <span class="skill-pill">n8n</span>
+                            <span class="skill-pill">Dagster</span>
+                            <span class="skill-pill">VBA</span>
+                            <span class="skill-pill">ETL</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-group">
+                        <h4>Data Science & Processos</h4>
+                        <div class="skills-pills">
+                            <span class="skill-pill">Inteligência Artificial (IA)</span>
+                            <span class="skill-pill">Machine Learning</span>
+                            <span class="skill-pill">BPMN</span>
+                            <span class="skill-pill">Otimização de Processos</span>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="section fade-in-section">
+            <div class="container">
+                <h2>Projetos em Destaque</h2>
+                
+                <div class="projects-section-group">
+                    
+                    <div>
+                        <h3>Liderança e Estratégia de BI</h3>
+                        <p class="section-description" style="text-align: left; max-width: none; margin: -20px 0 30px 0;">
+                            Como Coordenador de BI, meu foco é estruturar a cultura de dados, passando da coleta para a inteligência de negócios.
+                        </p>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Coordenador de BI @ Multivix</span>
+                                    <h4>Implementação de Data Warehouse & Self-Service BI</h4>
+                                    <p>Liderei a centralização da operação de BI, implementando um Data Warehouse para habilitar o Self-Service BI e democratizar o acesso aos dados na organização.</p>
+                                    <div class="project-tags">
+                                        <span>Data Warehouse</span> <span>Self-Service BI</span> <span>SQL</span> <span>Governança</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Coordenador de BI @ Multivix</span>
+                                    <h4>Criação de +20 Dashboards Operacionais</h4>
+                                    <p>Construí um portfólio de mais de 20 dashboards em Power BI e Metabase, fornecendo visibilidade de ponta a ponta para a empresa e suportando a otimização de processos.</p>
+                                    <div class="project-tags">
+                                        <span>Power BI</span> <span>Metabase</span> <span>Dashboards</span> <span>Otimização</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <h3>Análise de Negócios e Soluções</h3>
+                        <p class="section-description" style="text-align: left; max-width: none; margin: -20px 0 30px 0;">
+                            Como Analista e Desenvolvedor, traduzi desafios de negócios em soluções de dados funcionais.
+                        </p>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Analista @ Publicis Groupe</span>
+                                    <h4>Soluções de BI End-to-End (Mídia)</h4>
+                                    <p>Desenvolvi soluções completas de BI: da implementação de data warehouse e automação de ETLs à criação de dashboards para análise de performance de campanhas.</p>
+                                    <div class="project-tags">
+                                        <span>ETL</span> <span>Data Warehouse</span> <span>Automação</span> <span>Análise de Mídia</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Analista de BI @ Zaitt</span>
+                                    <h4>Análise de Padrões e Melhorias (Varejo)</h4>
+                                    <p>Criei dashboards visuais para análise de métricas e identifiquei padrões em dados para propor melhorias de negócio no setor de varejo autônomo.</p>
+                                    <div class="project-tags">
+                                        <span>Dashboards</span> <span>Análise de Dados</span> <span>Varejo</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Desenvolvedor / Consultor Freelancer</span>
+                                    <h4>Desenvolvimento Full Stack e Consultoria</h4>
+                                    <p>Atuei como desenvolvedor Full Stack (Python) e consultor em projetos de dados, criando aplicações web e soluções analíticas sob demanda para diversos clientes.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span> <span>Full Stack</span> <span>Consultoria</span> <span>Web Apps</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h3>Laboratório de Data Science</h3>
+                        <p class="section-description" style="text-align: left; max-width: none; margin: -20px 0 30px 0;">
+                            Aqui aplico minhas especializações em Machine Learning para criar modelos preditivos, transformando dados históricos em previsões futuras.
+                        </p>
+                        <div class="projects-grid">
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Projeto Conceitual (IES)</span>
+                                    <h4>Predição de Evasão de Alunos</h4>
+                                    <p>Aplicação de técnicas de Machine Learning (Classificação) para identificar alunos com alta probabilidade de evasão, permitindo ações de retenção proativas.</p>
+                                    <div class="project-tags">
+                                        <span>Machine Learning</span> <span>Python</span> <span>Classificação</span> <span>Retenção</span>
+                                    </div>
+                                </div>
+                                <div class="project-graph">
+                                    <canvas id="evasionChart"></canvas>
+                                </div>
+                            </div>
+                            <div class="project-card">
+                                <div class="project-content">
+                                    <span class="project-context">Projeto Conceitual (Varejo)</span>
+                                    <h4>Clusterização de Clientes</h4>
+                                    <p>Uso de algoritmos não supervisionados (K-Means) para segmentar clientes de varejo por padrões de consumo, otimizando ações de marketing e mix de produtos.</p>
+                                    <div class="project-tags">
+                                        <span>Machine Learning</span> <span>Python</span> <span>Clusterização</span> <span>Marketing</span>
+                                    </div>
+                                </div>
+                                <div class="project-graph">
+                                    <canvas id="clusterChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                
+                <div class="footer-about">
+                    <h4>Wesley Patero Trancoso</h4>
+                    <p>Coordenador de BI focado em otimização de processos, melhoria contínua e automação. Vamos transformar seus dados em valor?</p>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Navegação</h4>
+                    <ul>
+                        <li><a href="#about">Sobre Mim</a></li>
+                        <li><a href="#skills">Habilidades</a></li>
+                        <li><a href="#projects">Projetos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-social">
+                    <h4>Conecte-se</h4>
+                    <div class="social-icons">
+                        <a href="mailto:patero.wesley@gmail.com" aria-label="Enviar E-mail" title="E-mail">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                        </a>
+                        <a href="https://www.linkedin.com/in/wesley-patero-16461862" target="_blank" rel="noopener noreferrer" aria-label="Ver LinkedIn" title="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        </a>
+                        <a href="tel:+5527998287092" aria-label="Ligar" title="+55 (27) 99828-7092">
+                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Wesley Patero Trancoso</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // --- Lógica do Menu Hamburger (UX) ---
+            const hamburgerBtn = document.querySelector('.hamburger-menu');
+            const mobileNav = document.querySelector('.nav-menu-mobile');
+            const mobileNavLinks = document.querySelectorAll('.nav-menu-mobile a');
+
+            const toggleMenu = () => {
+                hamburgerBtn.classList.toggle('is-active');
+                mobileNav.classList.toggle('is-active');
+                document.body.style.overflow = mobileNav.classList.contains('is-active') ? 'hidden' : '';
+            };
+
+            hamburgerBtn.addEventListener('click', toggleMenu);
+            
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', toggleMenu);
+            });
+
+            // --- Lógica de Scroll Suave (JS para compatibilidade total) ---
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if(targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+            // --- Lógica de Animação de Scroll (Fade-in com ROBUSTEZ) ---
+            const sections = document.querySelectorAll('.fade-in-section');
+            
+            sections.forEach(section => {
+                section.classList.add('js-fade-in'); 
+            });
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1 
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            /* * ==================================
+             * SCRIPTS DOS GRÁFICOS (Chart.js) - CORREÇÃO DEFINITIVA
+             * ==================================
+            */
+            
+            // Definição das cores de texto
+            const primaryTextColor = '#F9FAFB'; // Branco para títulos e legendas
+            const secondaryTextColor = '#E5E7EB'; // Cinza claro para eixos
+            const gridColor = 'rgba(255, 255, 255, 0.15)'; // Cor das grades
+
+            // Configurações globais (apenas fonte e cor da grade)
+            Chart.defaults.borderColor = gridColor; 
+            Chart.defaults.font.family = "'Poppins', sans-serif";
+
+            // Gráfico 1: Evasão de Alunos (Gráfico de Barras)
+            try {
+                const evasionCtx = document.getElementById('evasionChart').getContext('2d');
+                
+                const evasionColors = [
+                    'rgba(22, 199, 132, 0.8)',  // Verde Vibrante
+                    'rgba(173, 240, 63, 0.8)',  // Verde-Limão Vibrante
+                    'rgba(250, 170, 21, 0.8)',  // Amarelo/Ouro Vibrante
+                    'rgba(253, 125, 32, 0.8)',  // Laranja Vibrante
+                    'rgba(244, 78, 78, 0.8)'    // Vermelho Vibrante
+                ];
+
+                new Chart(evasionCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['0-20%', '21-40%', '41-60%', '61-80%', '81-100%'],
+                        datasets: [{
+                            label: 'Nº de Alunos',
+                            data: [350, 180, 90, 45, 15], 
+                            backgroundColor: evasionColors,
+                            borderColor: evasionColors,
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { display: false },
+                            // CORRIGIDO: Cor do Título explícita
+                            title: { display: true, text: 'Distribuição de Risco de Evasão', color: primaryTextColor } 
+                        },
+                        scales: {
+                            y: { 
+                                beginAtZero: true, 
+                                grid: { color: gridColor },
+                                // CORRIGIDO: Cor do Eixo Y explícita
+                                ticks: { color: secondaryTextColor } 
+                            },
+                            x: { 
+                                grid: { display: false },
+                                // CORRIGIDO: Cor do Eixo X explícita
+                                ticks: { color: secondaryTextColor } 
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error('Erro ao renderizar evasionChart:', e); }
+
+            // Gráfico 2: Clusterização (Gráfico de Dispersão)
+            try {
+                const clusterCtx = document.getElementById('clusterChart').getContext('2d');
+                
+                const clusterColors = {
+                    green: 'rgba(22, 199, 132, 0.8)',
+                    blue: 'rgba(96, 165, 250, 0.8)', 
+                    red: 'rgba(244, 78, 78, 0.8)'
+                };
+
+                new Chart(clusterCtx, {
+                    type: 'scatter',
+                    data: {
+                        datasets: [
+                            {
+                                label: 'Cluster 1 (Ocasional)',
+                                data: [{x: 1, y: 20}, {x: 2, y: 30}, {x: 3, y: 15}, {x: 2, y: 40}, {x: 4, y: 25}],
+                                backgroundColor: clusterColors.green,
+                                pointRadius: 6,
+                                pointHoverRadius: 8
+                            },
+                            {
+                                label: 'Cluster 2 (Fiel)',
+                                data: [{x: 15, y: 70}, {x: 18, y: 80}, {x: 20, y: 65}, {x: 17, y: 75}, {x: 22, y: 90}],
+                                backgroundColor: clusterColors.blue,
+                                pointRadius: 6,
+                                pointHoverRadius: 8
+                            },
+                            {
+                                label: 'Cluster 3 (Premium)',
+                                data: [{x: 5, y: 150}, {x: 7, y: 180}, {x: 6, y: 160}, {x: 8, y: 200}, {x: 4, y: 170}],
+                                backgroundColor: clusterColors.red,
+                                pointRadius: 6,
+                                pointHoverRadius: 8
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            // CORRIGIDO: Cor da Legenda explícita
+                            legend: { position: 'top', labels: { color: primaryTextColor } },
+                            // CORRIGIDO: Cor do Título explícita
+                            title: { display: true, text: 'Segmentação por Frequência vs. Valor', color: primaryTextColor }
+                        },
+                        scales: {
+                            y: { 
+                                // CORRIGIDO: Cor do Título e Ticks do Eixo Y explícita
+                                title: { display: true, text: 'Valor Gasto (R$)', color: secondaryTextColor },
+                                ticks: { color: secondaryTextColor } 
+                            },
+                            x: { 
+                                // CORRIGIDO: Cor do Título e Ticks do Eixo X explícita
+                                title: { display: true, text: 'Frequência de Compra', color: secondaryTextColor },
+                                ticks: { color: secondaryTextColor } 
+                            }
+                        }
+                    }
+                });
+            } catch (e) { console.error('Erro ao renderizar clusterChart:', e); }
+
+        });
+    </script>
+
+</body>
+</html>
